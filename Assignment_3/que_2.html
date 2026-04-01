@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Products - Assignment 03</title>
+    <style>
+        
+        body {
+
+            background-color:lightgrey;
+            padding: 100px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product-card {
+            background-color:white;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: #e44d26;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-add {
+            background-color:lightgreen;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-add:hover {
+            background-color:green;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Our Products</h2>
+
+    <div class="product-container">
+
+        <div class="product-card">
+            <img src="Resources/Laptop.jpg" ><hr>
+            <div class="product-name">Product 1</div>
+            <p >High-quality product that meets <br> your needs.</p>
+            <div class="product-price">$805.08</div>
+            <button class="btn-add">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Resources/Laptop_bag.jpg"><hr>
+            <div class="product-name">Product 2</div>
+            <p>Excellent craftsmanship and <br> durable design.</p>
+            <div class="product-price">$11.50</div>
+            <button class="btn-add">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="Resources/Keyboard_mouse.jpg"><hr>
+            <div class="product-name">Product 3</div>
+            <p>Reliable and affordable choice for <br> everyone.</p>
+            <div class="product-price">$12.00</div>
+            <button class="btn-add">Add to Cart</button>
+        </div>
+    </div><hr>
+
+</body>
+</html>
