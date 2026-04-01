@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunbeam Registration Form</title>
+    <style>
+
+        .container {
+            width: 90%;
+            margin: auto;
+            border:1px solid black;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <img src="sunbeam_logo.png" alt="Sunbeam Logo" class="logo">
+        <h1>Sunbeam Registration Form</h1>
+    </div>
+
+    <table>
+        <tr>
+
+            <td width="60%" align="center">
+                <iframe width="450" height="200" 
+                    src="https://youtube.com/watch?v=Az5Bt3zUtiM&si=i_uVIPkHhCWYyrgN" 
+                    title="Sunbeam Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </td>
+
+            <td width="40%">
+                <form action="#" method="post">
+                    <table class="form-table" border="0" align="center">
+                        <tr>
+                            <td><b>Name:</b></td>
+                            <td><input type="text" name="txtName" required></td>
+                        </tr>
+                        <tr>
+                            <td><b>BirthDate:</b></td>
+                            <td><input type="date" name="dob"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Email:</b></td>
+                            <td><input type="email" name="txtEmail" required></td>
+                        </tr>
+                        <tr>
+                            <td><b>Password:</b></td>
+                            <td><input type="password" name="txtPass" required></td>
+                        </tr>
+                        <tr>
+                            <td><b>Address:</b></td>
+                            <td>
+                                <textarea name="txtAddress" rows="5">Sunbeam Institute of IT, "Anudeep Chambers", 203 Shaniwar Peth, Near Gujar Hospital, Karad - 415110 (Maharashtra)</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Gender:</b></td>
+                            <td>
+                                <input type="radio" name="gender" value="male"> Male 
+                                <input type="radio" name="gender" value="female"> Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Upload Photo:</b></td>
+                            <td><input type="file" name="photo"></td>
+                        </tr>
+                        <tr>
+                            <td><b>Select your Course:</b></td>
+                            <td>
+                                <select>
+                                    <option value="">Select course ---</option>
+                                    <option value="DAC">PG-DAC</option>
+                                    <option value="DBDA">PG-DBDA</option>
+                                    <option value="DMC">PG-DMC</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Skill Set:</b></td>
+                            <td>
+                                <input type="checkbox" name="skill" value="Java"> Java 
+                                <input type="checkbox" name="skill" value="CPP"> CPP 
+                                <input type="checkbox" name="skill" value="OS"> OS
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="Register">
+                                <input type="reset" value="Clear">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
