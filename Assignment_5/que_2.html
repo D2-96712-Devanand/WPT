@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator/title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        table {
+            border: 2px solid #000;
+            padding: 20px;
+            background-color: #fff;
+            border-spacing: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            background-color: #f9f9f9;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: #e0e0e0;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #000;
+        }
+
+        #result {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <h2>Calculator</h2>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="num1">Enter Number 1</label></td>
+            <td><input type="number" id="num1"></td>
+        </tr>
+        <tr>
+            <td><label for="num2">Enter Number 2</label></td>
+            <td><input type="number" id="num2"></td>
+        </tr>
+        <tr>
+            <td><label for="result">Result</label></td>
+            <td><input type="text" id="result" readonly></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <button onclick="calculate('add')">Addition</button>
+                <button onclick="calculate('sub')">Subtraction</button>
+                <button onclick="calculate('mul')">Multiplication</button>
+                <button onclick="calculate('div')">Division</button>
+            </td>
+        </tr>
+    </table>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
