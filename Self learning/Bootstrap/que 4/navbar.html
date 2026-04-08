@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Responsive Navbar</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+ 
+        .navbar-custom {
+            background-color: #1a1a2e; /* Dark Navy */
+        }
+        .navbar-custom .nav-link {
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+        .navbar-custom .nav-link:hover {
+            color: #00d2ff; /* Cyan Hover */
+        }
+        .navbar-custom .navbar-brand {
+            color: #00d2ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-sm sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">TechStore</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                        <li><a class="dropdown-item" href="#">Laptops</a></li>
+                        <li><a class="dropdown-item" href="#">Smartphones</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Support</a>
+                </li>
+            </ul>
+
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                <button class="btn btn-outline-info" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1>Welcome to TechStore</h1>
+    <p>The navbar above is fully responsive. Shrink your browser window to see the hamburger menu!</p>
+</div>
+
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

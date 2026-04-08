@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Registration</title>
+    <!-- Link to your local Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <!-- Login Form -->
+        <div class="col-md-5 mb-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Login</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input type="email" class="form-control" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="col-md-5">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Register</h3>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input type="email" class="form-control" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Create Password</label>
+                            <input type="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Link to your local Bootstrap JS Bundle (includes Popper) -->
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

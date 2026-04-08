@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management - jQuery</title>
+    <!-- Your local Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jQuery CDN -->
+    <script src="https://jquery.com"></script>
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Add Student Record</h4>
+                    <form id="studentForm">
+                        <div class="mb-3">
+                            <label class="form-label">Student Name</label>
+                            <input type="text" id="studentName" class="form-control" placeholder="Enter name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Course</label>
+                            <input type="text" id="studentCourse" class="form-control" placeholder="e.g. Computer Science" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Add to Table</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Display Table -->
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="text-center mb-3">Enrolled Students</h5>
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Course</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody">
+                            <!-- Rows will be added here via jQuery -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        let rowCount = 0;
+
+        // Form Submit Event
+        $('#studentForm').on('submit', function(e) {
+            e.preventDefault(); // Prevent page refresh
+
+            // Get values using jQuery val()
+            const name = $('#studentName').val();
+            const course = $('#studentCourse').val();
+            rowCount++;
+
+            // Create new row template
+            const newRow = `
+                <tr>
+                    <td>${rowCount}</td>
+                    <td>${name}</td>
+                    <td>${course}</td>
+                    <td><button class="btn btn-danger btn-sm deleteBtn">Delete</button></td>
+                </tr>
+            `;
+
+            // Append to table body using jQuery append()
+            $('#studentTableBody').append(newRow);
+
+            // Reset form
+            this.reset();
+        });
+
+        // Delete Row Event (Event Delegation)
+        $('#studentTableBody').on('click', '.deleteBtn', function() {
+            $(this).closest('tr').fadeOut(300, function() {
+                $(this).remove();
+            });
+        });
+    });
+</script>
+
+<!-- Your local Bootstrap JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

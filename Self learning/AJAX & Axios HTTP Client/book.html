@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Explorer - API Methods</title>
+    <link rel="stylesheet" href="Javascript/json_object.json">
+    <!-- Axios CDN (Since it's an external library) -->
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Book Records from Server</h2>
+    
+    <!-- Control Buttons -->
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+        <button class="btn btn-primary" onclick="getBooksXHR()">Fetch via XHR</button>
+        <button class="btn btn-success" onclick="getBooksFetchThen()">Fetch via .then()</button>
+        <button class="btn btn-info text-white" onclick="getBooksAsync()">Fetch via Async/Await</button>
+        <button class="btn btn-warning" onclick="getBooksAxios()">Fetch via Axios</button>
+    </div>
+
+    <!-- Display Area -->
+    <div id="bookContainer" class="d-flex flex-wrap justify-content-center gap-4">
+        <p class="text-muted">Click a button to load books...</p>
+    </div>
+</div>
+
+<script>
+    // URL to a sample JSON file or Mock API
+    const API_URL = "https://typicode.com"; 
+    // (Note: Using placeholder posts as "books" for demonstration)
+
+    const container = document.getElementById('bookContainer');
+
+    // Helper Function to display data
+    function renderBooks(books) {
+        container.innerHTML = books.map(book => `
+            <div class="card shadow-sm" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">${book.title.substring(0, 20)}</h5>
+                    <p class="card-text text-muted">Book ID: ${book.id}</p>
+                    <p class="card-text">${book.body.substring(0, 50)}...</p>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // --- 1. XMLHTTPRequest (XHR) ---
+    function getBooksXHR() {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", API_URL);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                renderBooks(JSON.parse(xhr.responseText));
+            }
+        };
+        xhr.send();
+    }
+
+    // --- 2. Fetch using .then().catch() ---
+    function getBooksFetchThen() {
+        fetch(API_URL)
+            .then(response => response.json())
+            .then(data => renderBooks(data))
+            .catch(err => console.error("Fetch Error:", err));
+    }
+
+    // --- 3. Fetch using Async/Await ---
+    async function getBooksAsync() {
+        try {
+            const response = await fetch(API_URL);
+            const data = await response.json();
+            renderBooks(data);
+        } catch (err) {
+            console.error("Async Error:", err);
+        }
+    }
+
+    // --- 4. Using Axios ---
+    function getBooksAxios() {
+        axios.get(API_URL)
+            .then(response => renderBooks(response.data))
+            .catch(err => console.error("Axios Error:", err));
+    }
+</script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
